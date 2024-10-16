@@ -1,0 +1,73 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# Build outputs
+build/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Docker
+*.env
+
+# Database
+*.sqlite3
+
+# Testing
+coverage/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Frontend specific (already covered in frontend/.gitignore, but added here for completeness)
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Backend specific
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+backend/env/
+backend/venv/
+backend/ENV/
+backend/env.bak/
+backend/venv.bak/
+
+# Postgres data (from Docker volume)
+postgres_data/
