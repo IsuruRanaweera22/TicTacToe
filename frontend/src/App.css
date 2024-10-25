@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+.tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 2px;
+  background-color: #fff;
+  border: 2px solid #999;
+  cursor: pointer;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.new-game {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.new-game:hover {
+  background-color: #45a049;
+}
+
+.game-results {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.game-results h3 {
+  margin-bottom: 10px;
+}
+
+.game-results ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.game-results li {
+  margin-bottom: 5px;
+}

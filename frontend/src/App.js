@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import './App.css';
+import TicTacToe from './components/TicTacToe';
 
 function App() {
-
   return (
-    <div>
-      <h1>Sample App</h1>
+    <div className="App">
+      <header className="App-header">
+        <h1>Tic Tac Toe</h1>
+        <TicTacToe />
+      </header>
     </div>
   );
 }

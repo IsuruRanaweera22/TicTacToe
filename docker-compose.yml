@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   backend:
@@ -8,7 +8,10 @@ services:
     volumes:
       - ./backend:/app
     environment:
-      - DATABASE_URL=postgresql://user:password@db:5432/sample_db
+      - DATABASE_URL=postgresql://user:password@db:5432/tictactoe
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - db
 
   frontend:
     build: ./frontend
@@ -19,15 +22,27 @@ services:
       - /app/node_modules
     environment:
       - REACT_APP_API_URL=http://localhost:8000
+    depends_on:
+      - backend
 
   db:
-    image: postgres:14
+    image: postgres:13
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=sample_db
+      - POSTGRES_DB=tictactoe
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    ports:
+      - "8080:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=password
 
 volumes:
   postgres_data:
